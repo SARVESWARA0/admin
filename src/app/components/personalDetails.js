@@ -206,7 +206,7 @@ export default function PersonDetails({ record, onBack }) {
         <div className="bg-gray-50 p-6 rounded-xl">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Code Analysis Report</h2>
           <div className="bg-white p-4 rounded-lg border border-gray-200 max-h-60 overflow-y-auto">
-            <p className="text-sm text-gray-700 whitespace-pre-wrap">{record.fields.codeAnalysisReport}</p>
+            <p className="text-sm text-gray-700 whitespace-pre-wrap">{JSON.parse(record.fields.codeAnalysisReport).summary}</p>
           </div>
         </div>
 
@@ -214,7 +214,7 @@ export default function PersonDetails({ record, onBack }) {
         <div className="bg-gray-50 p-6 rounded-xl">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Screen Record Analysis</h2>
           <div className="bg-white p-4 rounded-lg border border-gray-200 max-h-60 overflow-y-auto">
-            <p className="text-sm text-gray-700 whitespace-pre-wrap">{record.fields.screenRecordAnalysis}</p>
+            <p className="text-sm text-gray-700 whitespace-pre-wrap">{JSON.parse(record.fields.screenRecordAnalysis).summary}</p>
           </div>
         </div>
       </div>
