@@ -11,16 +11,16 @@ export async function POST(req) {
       });
     }
 
-    // Initialize Airtable
+    // Initialize Airtable with the API key and base ID
     const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
       .base('app1LJNvLgSJaHCgU');
 
-    // Check if the user exists in Airtable
+    // Check if a record exists in Airtable where both email and password match
     const records = await new Promise((resolve, reject) => {
       const allRecords = [];
       base('admin_access')
         .select({
-          filterByFormula: `{Name} = '${email}'`,
+          filterByFormula: `AND({Name} = '${email}', {password} = '${password}')`,
           view: 'Grid view',
         })
         .eachPage(
@@ -43,14 +43,6 @@ export async function POST(req) {
     }
 
     const user = records[0];
-    const storedPassword = user.get('Password'); 
-
-    if (password !== storedPassword) {
-      return new Response(JSON.stringify({ message: 'Invalid email or password' }), {
-        
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
 
     return new Response(
       JSON.stringify({
