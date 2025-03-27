@@ -533,7 +533,7 @@ export default function AdminPage() {
             <div className="bg-gradient-to-r from-green-500 to-teal-500 rounded-lg p-4 text-white shadow-md">
               <h3 className="text-xl font-bold">Analysed Entries</h3>
               <p className="text-3xl font-bold mt-2">
-                {leaderboardData.filter(item => item.status.toLowerCase() === 'analysed').length}
+                {leaderboardData.filter(item => item.status.toLowerCase() === 'stage-4').length}
               </p>
             </div>
             <div className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg p-4 text-white shadow-md">
