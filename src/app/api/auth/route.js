@@ -13,7 +13,7 @@ export async function POST(req) {
 
     // Initialize Airtable with the API key and base ID
     const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
-      .base('app1LJNvLgSJaHCgU');
+      .base(process.env.AIRTABLE_BASE_ID);
 
     // Check if a record exists in Airtable where both email and password match
     const records = await new Promise((resolve, reject) => {
