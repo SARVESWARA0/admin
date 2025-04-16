@@ -205,7 +205,7 @@ export default function ComprehensiveDetailView({ record, onBack }) {
                   style={{ animationDelay: "0.2s" }}
                 >
                   <div className="text-xs text-gray-500 mb-1">Score</div>
-                  <div className="text-gray-600 font-semibold">{Number.parseFloat(finalAnalysis.score).toFixed(1)} / 5</div>
+                  <div className="text-gray-600 font-semibold">{Number.parseFloat(finalAnalysis.score).toFixed(1)*10} / 10</div>
                 </div>
                 <div
                   className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 hover:translate-y-[-2px] animate-fadeIn"
